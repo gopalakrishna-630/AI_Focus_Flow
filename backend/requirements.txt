@@ -8,3 +8,4 @@ python-dotenv>=1.0.1
 Flask-Migrate>=4.0.5
 google-genai>=2.19.0
 requests>=2.31.0
+PyPDF2==3.0.1
