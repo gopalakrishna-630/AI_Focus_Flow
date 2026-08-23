@@ -1,0 +1,47 @@
+services:
+  # 1. ML Heavy Service
+  - type: web
+    name: ai-focusflow-ml
+    env: python
+    rootDir: ml-service
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
+
+  # 2. Lightweight API Backend
+  - type: web
+    name: ai-focusflow-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
+      - key: DATABASE_URL
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: FLASK_SECRET_KEY
+        generateValue: true
+      - key: ML_SERVICE_URL
+        fromService:
+          type: web
+          name: ai-focusflow-ml
+          envVarKey: RENDER_EXTERNAL_URL
+
+  # 3. React Frontend
+  - type: web
+    name: ai-focusflow-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: ai-focusflow-backend
+          envVarKey: RENDER_EXTERNAL_URL
