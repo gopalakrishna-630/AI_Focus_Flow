@@ -745,6 +745,14 @@ def api_generate_single_page():
     page_number = data.get("page_number", 1)
     if not concept:
         return jsonify({"error": "Concept is required"}), 400
+        
+    source = data.get("source", "ai")
+    material_ids = data.get("material_ids", [])
+    user_id = session.get("student_id")
+    if source == "materials" and material_ids and user_id:
+        mat_text = get_material_context(user_id, material_ids)
+        concept += mat_text
+        
     content = generate_single_page_content(concept, page_number)
     return jsonify({"content": content})
 
@@ -874,6 +882,12 @@ def api_create_session():
     prompt_context = concept
     if weak_topics:
         prompt_context += f". Note: student struggles with {', '.join(weak_topics)}"
+        
+    source = data.get("source", "ai")
+    material_ids = data.get("material_ids", [])
+    if source == "materials" and material_ids:
+        mat_text = get_material_context(user_id, material_ids)
+        prompt_context += mat_text
         
     plan_data = generate_study_plan(prompt_context)
     
