@@ -612,13 +612,13 @@ export const StudySession = () => {
                   Generating page content with Gemini...
                 </div>
               ) : (
-                studyPages.length > 0 && (
+                studyPages.length > 0 && studyPages[currentPageIndex] && (
                   <div>
                     <h3 style={{ marginBottom: "1rem", color: "var(--accent-cyan)" }}>
-                      Page {currentPageIndex + 1}: {studyPages[currentPageIndex].title}
+                      Page {currentPageIndex + 1}: {studyPages[currentPageIndex]?.title}
                     </h3>
                     <div style={{ lineHeight: "1.8", color: "var(--text-secondary)", whiteSpace: "pre-wrap" }}>
-                      {studyPages[currentPageIndex].content}
+                      {studyPages[currentPageIndex]?.content}
                     </div>
                   </div>
                 )
