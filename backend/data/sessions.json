@@ -1,0 +1,742 @@
+[
+    {
+        "date": "2026-02-19",
+        "duration": 0,
+        "distractions": 4,
+        "focus_score": 0
+    },
+    {
+        "date": "2026-02-19",
+        "duration": 14,
+        "distractions": 2,
+        "focus_score": 90
+    },
+    {
+        "date": "2026-02-19",
+        "duration": 1,
+        "distractions": 4,
+        "focus_score": 80
+    },
+    {
+        "date": "2026-02-19",
+        "duration": 0,
+        "distractions": 2,
+        "focus_score": 0
+    },
+    {
+        "date": "2026-02-19",
+        "duration": 10,
+        "distractions": 2,
+        "focus_score": 90
+    },
+    {
+        "date": "2026-02-19",
+        "duration": null,
+        "distractions": 0,
+        "focus_score": 100
+    },
+    {
+        "date": "2026-02-20",
+        "duration": 90,
+        "distractions": 30,
+        "focus_score": 0,
+        "module_id": 1,
+        "emotion": "Distracted"
+    },
+    {
+        "date": "2026-02-20",
+        "duration": 0,
+        "distractions": 0,
+        "focus_score": 0,
+        "module_id": 1,
+        "emotion": "Distracted"
+    },
+    {
+        "date": "2026-02-20",
+        "duration": 21,
+        "distractions": 7,
+        "focus_score": 65,
+        "module_id": 3,
+        "emotion": "Engaged"
+    },
+    {
+        "date": "2026-02-20",
+        "duration": 192,
+        "distractions": 63,
+        "focus_score": 0,
+        "module_id": 1,
+        "emotion": "Distracted"
+    },
+    {
+        "date": "2026-02-20",
+        "duration": 12,
+        "distractions": 4,
+        "focus_score": 80,
+        "module_id": 2,
+        "emotion": "Focused"
+    },
+    {
+        "date": "2026-02-20",
+        "duration": 15,
+        "distractions": 5,
+        "focus_score": 75,
+        "module_id": 2,
+        "emotion": "Focused"
+    },
+    {
+        "date": "2026-02-20",
+        "duration": 6,
+        "distractions": 2,
+        "focus_score": 90,
+        "module_id": 2,
+        "emotion": "Focused"
+    },
+    {
+        "date": "2026-02-20 21:13:08",
+        "duration": 78,
+        "distractions": 26,
+        "focus_score": 0,
+        "module_id": 1,
+        "emotion": "Distracted"
+    },
+    {
+        "date": "2026-02-20 21:14:46",
+        "duration": 72,
+        "distractions": 24,
+        "focus_score": 0,
+        "module_id": 2,
+        "emotion": "Distracted"
+    },
+    {
+        "date": "2026-02-20 21:15:35",
+        "duration": 24,
+        "distractions": 8,
+        "focus_score": 60,
+        "module_id": 3,
+        "emotion": "Engaged"
+    },
+    {
+        "date": "2026-02-20 21:16:08",
+        "duration": 27,
+        "distractions": 9,
+        "focus_score": 55,
+        "module_id": 3,
+        "emotion": "Engaged"
+    },
+    {
+        "date": "2026-02-20 21:27:29",
+        "duration": 225,
+        "distractions": 75,
+        "focus_score": 0,
+        "module_id": 2,
+        "emotion": "Distracted"
+    },
+    {
+        "date": "2026-02-20 21:48:32",
+        "duration": 84,
+        "distractions": 28,
+        "focus_score": 0,
+        "module_id": 1,
+        "emotion": "Distracted"
+    },
+    {
+        "date": "2026-02-20 21:50:26",
+        "duration": 78,
+        "distractions": 26,
+        "focus_score": 0,
+        "module_id": 1,
+        "emotion": "Distracted"
+    },
+    {
+        "date": "2026-02-20 22:01:45",
+        "duration": 123,
+        "distractions": 25,
+        "focus_score": 0,
+        "module_id": 1,
+        "emotion": "Distracted"
+    },
+    {
+        "date": "2026-02-20 22:15:29",
+        "duration": 174,
+        "distractions": 3,
+        "focus_score": 85,
+        "module_id": 1,
+        "emotion": "Focused"
+    },
+    {
+        "date": "2026-02-21 09:45:56",
+        "duration": 165,
+        "distractions": 46,
+        "focus_score": 0,
+        "module_id": 1,
+        "emotion": "Distracted"
+    },
+    {
+        "date": "2026-02-21 09:48:02",
+        "duration": 48,
+        "distractions": 12,
+        "focus_score": 40,
+        "module_id": 2,
+        "emotion": "Distracted"
+    },
+    {
+        "date": "2026-02-21 09:57:29",
+        "duration": 342,
+        "distractions": 96,
+        "focus_score": 0,
+        "module_id": 2,
+        "emotion": "Distracted"
+    },
+    {
+        "date": "2026-02-21 09:58:24",
+        "duration": 57,
+        "distractions": 14,
+        "focus_score": 30,
+        "module_id": 3,
+        "emotion": "Distracted"
+    },
+    {
+        "date": "2026-02-21 13:38:02",
+        "duration": 96,
+        "distractions": 1,
+        "focus_score": 95,
+        "module_id": 1,
+        "emotion": "Focused"
+    },
+    {
+        "date": "2026-02-21 13:39:41",
+        "duration": 27,
+        "distractions": 0,
+        "focus_score": 100,
+        "module_id": 2,
+        "emotion": "Focused"
+    },
+    {
+        "date": "2026-02-21 13:42:16",
+        "duration": 57,
+        "distractions": 2,
+        "focus_score": 90,
+        "module_id": 2,
+        "emotion": "Focused"
+    },
+    {
+        "date": "2026-02-21 19:53:23",
+        "duration": 45,
+        "distractions": 8,
+        "focus_score": 60,
+        "module_id": 2,
+        "emotion": "Engaged"
+    },
+    {
+        "date": "2026-02-21 21:52:35",
+        "duration": 93,
+        "distractions": 1,
+        "focus_score": 95,
+        "module_id": 2,
+        "emotion": "Focused"
+    },
+    {
+        "date": "2026-02-21 21:54:23",
+        "duration": 78,
+        "distractions": 14,
+        "focus_score": 30,
+        "module_id": 3,
+        "emotion": "Distracted"
+    },
+    {
+        "date": "2026-02-21 22:12:53",
+        "duration": 297,
+        "distractions": 65.5,
+        "focus_score": 20,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-21 22:24:04",
+        "duration": 126,
+        "distractions": 21.5,
+        "focus_score": 29,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-21 22:36:11",
+        "duration": 129,
+        "distractions": 34.5,
+        "focus_score": 12,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-21 22:36:56",
+        "duration": 48,
+        "distractions": 8.0,
+        "focus_score": 30,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-21 22:45:05",
+        "duration": 186,
+        "distractions": 32.5,
+        "focus_score": 29,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-21 22:52:50",
+        "duration": 63,
+        "distractions": 11.5,
+        "focus_score": 27,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-21 22:53:43",
+        "duration": 63,
+        "distractions": 11.0,
+        "focus_score": 29,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-21 23:03:18",
+        "duration": 57,
+        "distractions": 9.5,
+        "focus_score": 30,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-21 23:04:17",
+        "duration": 66,
+        "distractions": 13.0,
+        "focus_score": 25,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-21 23:50:27",
+        "duration": 0,
+        "distractions": 0.0,
+        "focus_score": 100,
+        "emotion": "No Face",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-21 23:55:46",
+        "duration": 0,
+        "distractions": 0.0,
+        "focus_score": 100,
+        "emotion": "No Face",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 09:05:54",
+        "duration": 0,
+        "distractions": 0.0,
+        "focus_score": 100,
+        "emotion": "No Face",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 09:07:11",
+        "duration": 0,
+        "distractions": 0.0,
+        "focus_score": 100,
+        "emotion": "No Face",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 09:16:54",
+        "duration": 117,
+        "distractions": 18,
+        "focus_score": 56,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-22 09:31:02",
+        "duration": 243,
+        "distractions": 68,
+        "focus_score": 24,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-22 09:59:05",
+        "duration": 0,
+        "distractions": 0,
+        "focus_score": 100,
+        "emotion": "No Face",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 10:04:59",
+        "duration": 462,
+        "distractions": 147,
+        "focus_score": 32,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-22 10:11:52",
+        "duration": 381,
+        "distractions": 64,
+        "focus_score": 51,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-22 10:24:36",
+        "duration": 78,
+        "distractions": 11,
+        "focus_score": 58,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-22 10:26:14",
+        "duration": 90,
+        "distractions": 1,
+        "focus_score": 98,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 10:26:43",
+        "duration": 9,
+        "distractions": 1,
+        "focus_score": 67,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-22 10:36:17",
+        "duration": 87,
+        "distractions": 0,
+        "focus_score": 100,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 10:38:10",
+        "duration": 45,
+        "distractions": 0,
+        "focus_score": 100,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 10:38:49",
+        "duration": 192,
+        "distractions": 21,
+        "focus_score": 67,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-22 10:44:39",
+        "duration": 78,
+        "distractions": 5,
+        "focus_score": 81,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 10:46:18",
+        "duration": 90,
+        "distractions": 3,
+        "focus_score": 93,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 10:58:42",
+        "duration": 171,
+        "distractions": 30,
+        "focus_score": 48,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-22 11:00:04",
+        "duration": 105,
+        "distractions": 0,
+        "focus_score": 100,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 11:02:17",
+        "duration": 81,
+        "distractions": 0,
+        "focus_score": 100,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 11:08:28",
+        "duration": 57,
+        "distractions": 0,
+        "focus_score": 100,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 11:08:47",
+        "duration": 27,
+        "distractions": 0,
+        "focus_score": 100,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 11:18:46",
+        "duration": 75,
+        "distractions": 1,
+        "focus_score": 97,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 12:03:26",
+        "duration": 15,
+        "distractions": 0,
+        "focus_score": 100,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 12:54:12",
+        "duration": 123,
+        "distractions": 20,
+        "focus_score": 52,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-22 13:03:44",
+        "duration": 48,
+        "distractions": 4,
+        "focus_score": 75,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 14:22:11",
+        "duration": 237,
+        "distractions": 5,
+        "focus_score": 96,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-22 14:36:16",
+        "duration": 90,
+        "distractions": 12,
+        "focus_score": 61,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-22 14:42:12",
+        "duration": 273,
+        "distractions": 39,
+        "focus_score": 57,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-22 14:42:37",
+        "duration": 108,
+        "distractions": 17,
+        "focus_score": 54,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-22 14:52:38",
+        "duration": 99,
+        "distractions": 24,
+        "focus_score": 29,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-22 14:55:24",
+        "duration": 213,
+        "distractions": 34,
+        "focus_score": 57,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-22 15:16:11",
+        "duration": 384,
+        "distractions": 83,
+        "focus_score": 43,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-22 15:23:55",
+        "duration": 528,
+        "distractions": 77,
+        "focus_score": 59,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-22 15:41:25",
+        "duration": 732,
+        "distractions": 130,
+        "focus_score": 50,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-22 15:47:31",
+        "duration": 672,
+        "distractions": 137,
+        "focus_score": 42,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-22 16:03:21",
+        "duration": 819,
+        "distractions": 159,
+        "focus_score": 42,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-22 16:23:30",
+        "duration": 711,
+        "distractions": 81,
+        "focus_score": 72,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-23 09:51:23",
+        "duration": 552,
+        "distractions": 63,
+        "focus_score": 69,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-23 12:00:35",
+        "duration": 447,
+        "distractions": 71,
+        "focus_score": 56,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-23 13:44:51",
+        "duration": 1071,
+        "distractions": 243,
+        "focus_score": 34,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-02-23 16:08:53",
+        "duration": 627,
+        "distractions": 93,
+        "focus_score": 65,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-23 22:25:42",
+        "duration": 441,
+        "distractions": 76,
+        "focus_score": 60,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-23 22:31:15",
+        "duration": 381,
+        "distractions": 27,
+        "focus_score": 83,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-23 22:32:25",
+        "duration": 384,
+        "distractions": 58,
+        "focus_score": 67,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-23 22:36:09",
+        "duration": 399,
+        "distractions": 52,
+        "focus_score": 69,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-23 22:38:48",
+        "duration": 411,
+        "distractions": 7,
+        "focus_score": 96,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-23 22:41:42",
+        "duration": 468,
+        "distractions": 62,
+        "focus_score": 69,
+        "emotion": "Engaged",
+        "suggestion": "Try minimizing distractions to improve your focus score."
+    },
+    {
+        "date": "2026-02-23 22:43:56",
+        "duration": 399,
+        "distractions": 11,
+        "focus_score": 92,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-24 12:02:48",
+        "duration": 450,
+        "distractions": 46,
+        "focus_score": 75,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-24 13:05:27",
+        "duration": 576,
+        "distractions": 13,
+        "focus_score": 94,
+        "emotion": "Focused",
+        "suggestion": "Great concentration! Keep up the excellent work."
+    },
+    {
+        "date": "2026-02-24 13:08:33",
+        "duration": 633,
+        "distractions": 130,
+        "focus_score": 48,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    },
+    {
+        "date": "2026-08-22 18:59:39",
+        "duration": 1026,
+        "distractions": 252,
+        "focus_score": 30,
+        "emotion": "Distracted",
+        "suggestion": "You seem distracted. A short break might help."
+    }
+]
