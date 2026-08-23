@@ -27,7 +27,7 @@ def generate_study_plan(concept: str):
     """
     try:
         response = client.models.generate_content(
-            model='gemini-3.6-flash',
+            model='gemini-1.5-flash',
             contents=prompt,
         )
         # Parse JSON
@@ -57,7 +57,7 @@ def clear_doubt(concept: str, doubt: str):
     """
     try:
         response = client.models.generate_content(
-            model='gemini-3.6-flash',
+            model='gemini-1.5-flash',
             contents=prompt,
         )
         return response.text.strip()
@@ -83,7 +83,7 @@ def generate_study_content(concept: str):
     """
     try:
         response = client.models.generate_content(
-            model='gemini-3.6-flash',
+            model='gemini-1.5-flash',
             contents=prompt,
         )
         text = response.text.strip()
@@ -117,7 +117,7 @@ def generate_quiz(concept: str):
     """
     try:
         response = client.models.generate_content(
-            model='gemini-3.6-flash',
+            model='gemini-1.5-flash',
             contents=prompt,
         )
         # Parse JSON
@@ -156,7 +156,7 @@ def generate_single_page_content(concept: str, page_number: int):
     """
     try:
         response = client.models.generate_content(
-            model='gemini-3.6-flash',
+            model='gemini-1.5-flash',
             contents=prompt,
         )
         text = response.text.strip()
@@ -192,7 +192,7 @@ def generate_page_quiz(concept: str, page_content: str):
     """
     try:
         response = client.models.generate_content(
-            model='gemini-3.6-flash',
+            model='gemini-1.5-flash',
             contents=prompt,
         )
         text = response.text.strip()
