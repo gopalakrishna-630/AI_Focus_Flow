@@ -1,4 +1,9 @@
-import { storageService } from "./storageService";
+import re
+
+with open("/home/gopalakrishna/Documents/AI_Focus_Flow/frontend/src/services/authService.js", "r") as f:
+    content = f.read()
+
+new_content = """import { storageService } from "./storageService";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
@@ -72,3 +77,7 @@ export const authService = {
     return auth.isAuthenticated ? auth.user : null;
   }
 };
+"""
+
+with open("/home/gopalakrishna/Documents/AI_Focus_Flow/frontend/src/services/authService.js", "w") as f:
+    f.write(new_content)
