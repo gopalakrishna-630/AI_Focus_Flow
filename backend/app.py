@@ -986,8 +986,7 @@ def upload_material():
                 for page in pdf_reader.pages:
                     text = page.extract_text()
                     if text:
-                        content += text + '
-'
+                        content += text + '\\n'
             elif filename.endswith('.txt'):
                 content = file.read().decode('utf-8')
             else:
@@ -1028,10 +1027,7 @@ def ask_materials():
         
     combined_content = ''
     for m in materials:
-        combined_content += f'--- Source: {m.filename} ---
-{m.content}
-
-'
+        combined_content += f'--- Source: {m.filename} ---\\n{m.content}\\n\\n'
         
     answer = answer_from_materials(question, combined_content)
     return jsonify({'answer': answer})
