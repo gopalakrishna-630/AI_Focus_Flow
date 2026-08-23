@@ -65,6 +65,41 @@ def clear_doubt(concept: str, doubt: str):
         print(f"Error clearing doubt: {e}")
         return "I'm having trouble connecting right now, but stay focused! We'll clear this doubt soon."
 
+def generate_study_content(concept: str):
+    prompt = f"""
+    You are an AI study tutor. Generate comprehensive study material for the concept: '{concept}'.
+    You must provide EXACTLY 4 pages of content.
+    Return the response as a valid JSON array of objects, where each object represents a page.
+    Format:
+    [
+      {{
+        "page_number": 1,
+        "title": "Page 1 Title",
+        "content": "Detailed educational content for this page..."
+      }},
+      ... up to 4 pages
+    ]
+    Do not include markdown formatting or anything else outside the JSON.
+    """
+    try:
+        response = client.models.generate_content(
+            model='gemini-3.6-flash',
+            contents=prompt,
+        )
+        text = response.text.strip()
+        if text.startswith("```json"): text = text[7:]
+        if text.startswith("```"): text = text[3:]
+        if text.endswith("```"): text = text[:-3]
+        return json.loads(text.strip())
+    except Exception as e:
+        print(f"Error generating content: {e}")
+        return [
+            {"page_number": 1, "title": "Introduction", "content": f"Introduction to {concept}."},
+            {"page_number": 2, "title": "Core Concepts", "content": "Details of core concepts."},
+            {"page_number": 3, "title": "Advanced Topics", "content": "Advanced topics and applications."},
+            {"page_number": 4, "title": "Summary", "content": f"Summary of {concept}."}
+        ]
+
 def generate_quiz(concept: str):
     prompt = f"""
     You are an AI tutor. Generate a 5-question multiple choice quiz on the concept: '{concept}'.

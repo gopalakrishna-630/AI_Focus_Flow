@@ -11,7 +11,7 @@ from ai.session_analyzer import analyze_session
 import requests
 from ai.session_analyzer import analyze_session
 from ai.emotion_detector import detect_emotion
-from ai.gemini_service import generate_study_plan, clear_doubt, generate_quiz
+from ai.gemini_service import generate_study_plan, clear_doubt, generate_quiz, generate_study_content
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -728,6 +728,15 @@ def api_generate_quiz():
         return jsonify({"error": "Concept is required"}), 400
     quiz = generate_quiz(concept)
     return jsonify({"quiz": quiz})
+
+@app.route("/api/ai/generate-content", methods=["POST"])
+def api_generate_study_content():
+    data = request.json
+    concept = data.get("concept", "")
+    if not concept:
+        return jsonify({"error": "Concept is required"}), 400
+    content = generate_study_content(concept)
+    return jsonify({"content": content})
 
 
 
