@@ -209,3 +209,25 @@ def generate_page_quiz(concept: str, page_content: str):
                 "correctOption": "a"
             }
         ] * 2
+
+def answer_from_materials(question: str, materials_text: str):
+    prompt = f"""
+    You are an AI study assistant. Answer the user's question using ONLY the provided materials below.
+    If the answer cannot be found in the materials, explicitly say 'I cannot find the answer in the provided documents.'
+    Do not use outside knowledge.
+    
+    MATERIALS:
+    {materials_text}
+    
+    QUESTION:
+    {question}
+    """
+    try:
+        response = generate_content_with_retry(
+            model='gemini-flash-lite-latest',
+            contents=prompt,
+        )
+        return response.text.strip()
+    except Exception as e:
+        print(f'Error answering from materials: {e}')
+        return 'Sorry, I am having trouble analyzing the materials right now.'

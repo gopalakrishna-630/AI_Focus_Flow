@@ -17,6 +17,7 @@ import { Profile } from "./pages/Profile";
 import { Settings } from "./pages/Settings";
 import { StudySetup } from "./pages/StudySetup";
 import { StudySession } from "./pages/StudySession";
+import { Materials } from "./pages/Materials";
 
 // Import styling sheets
 import "./styles/global.css";
@@ -90,6 +91,7 @@ function App() {
             <Route element={<ProtectedLayout />}>
               <Route path="/setup" element={<StudySetup />} />
               <Route path="/session" element={<StudySession />} />
+              <Route path="/materials" element={<Materials />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/analytics" element={<Analytics />} />
               <Route path="/history" element={<SessionHistory />} />
