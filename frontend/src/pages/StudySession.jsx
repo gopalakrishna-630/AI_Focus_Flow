@@ -32,6 +32,7 @@ export const StudySession = () => {
   const [pageQuizResult, setPageQuizResult] = useState(null);
   const [pageQuizScore, setPageQuizScore] = useState(0);
   const [pageQuizEvaluations, setPageQuizEvaluations] = useState({});
+  const [prefetchedNextPage, setPrefetchedNextPage] = useState(null);
   
   const [doubts, setDoubts] = useState([{ sender: "ai", text: `I am your AI tutor. I notice you are focusing on ${config.concept}. Do you have any doubts before we continue? Stay focused!` }]);
   const [doubtInput, setDoubtInput] = useState("");
@@ -97,6 +98,38 @@ export const StudySession = () => {
       setQuizData([]);
     }
   };
+
+  const fetchPrefetchNextPage = async (pageNumber) => {
+    try {
+      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+      const res = await fetch(`${API_URL}/api/ai/generate-single-page`, {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ concept: config.concept, page_number: pageNumber })
+      });
+      const data = await res.json();
+      if (data.content) {
+        setPrefetchedNextPage(data.content);
+      }
+    } catch (e) {
+      console.error("Prefetch error", e);
+    }
+  };
+
+  // Prefetch quiz when a page loads
+  useEffect(() => {
+    if (studyPages.length > 0) {
+      fetchPageQuiz(studyPages.length - 1);
+    }
+  }, [studyPages.length]);
+
+  // Prefetch next page when user opens the quiz
+  useEffect(() => {
+    if (showPageQuiz && studyPages.length < 4) {
+      fetchPrefetchNextPage(studyPages.length + 1);
+    }
+  }, [showPageQuiz]);
 
   useEffect(() => {
     fetchSinglePage(1);
@@ -284,7 +317,15 @@ export const StudySession = () => {
 
   const handlePageQuizSuccess = () => {
     setShowPageQuiz(false);
-    fetchSinglePage(studyPages.length + 1);
+    setPageQuizData(null); // Clear for the next page's prefetch
+    setPageQuizAnswers({});
+    setPageQuizResult(null);
+    if (prefetchedNextPage) {
+      setStudyPages(prev => [...prev, prefetchedNextPage]);
+      setPrefetchedNextPage(null);
+    } else {
+      fetchSinglePage(studyPages.length + 1);
+    }
     setCurrentPageIndex(prev => prev + 1);
   };
 
@@ -609,7 +650,9 @@ export const StudySession = () => {
                   className="btn btn-primary"
                   onClick={() => {
                     setShowPageQuiz(true);
-                    fetchPageQuiz(currentPageIndex);
+                    if (!pageQuizData) {
+                      fetchPageQuiz(currentPageIndex);
+                    }
                   }}
                 >
                   Take Page Quiz <ChevronRight size={18} style={{ marginLeft: '5px' }} />
