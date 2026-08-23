@@ -141,8 +141,12 @@ export const api = {
 
   // Analytics
   getAnalytics: async () => {
-    return fetchWithFallback("/api/analytics", { method: "GET" }, () => {
-      const sessions = storageService.getSessions();
+    return fetchWithFallback("/api/sessions", { method: "GET" }, () => {
+      return storageService.getSessions();
+    }).then(sessions => {
+      if (!Array.isArray(sessions)) {
+        sessions = [];
+      }
       
       // Format mock metrics or aggregate data from saved sessions
       const scoresOverTime = sessions.map((s, idx) => ({
