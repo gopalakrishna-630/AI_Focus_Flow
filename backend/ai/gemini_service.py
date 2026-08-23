@@ -139,3 +139,73 @@ def generate_quiz(concept: str):
                 "correctOption": "a"
             }
         ] * 5
+
+def generate_single_page_content(concept: str, page_number: int):
+    prompt = f"""
+    You are an AI study tutor. Generate comprehensive study material for the concept: '{concept}'.
+    This is for Page {page_number}.
+    Focus on one specific subtopic or aspect of the concept suitable for this page number.
+    Return the response as a valid JSON object.
+    Format:
+    {{
+        "page_number": {page_number},
+        "title": "Subtopic Title",
+        "content": "Detailed educational content..."
+    }}
+    Do not include markdown formatting or anything else outside the JSON.
+    """
+    try:
+        response = client.models.generate_content(
+            model='gemini-3.6-flash',
+            contents=prompt,
+        )
+        text = response.text.strip()
+        if text.startswith("```json"): text = text[7:]
+        if text.startswith("```"): text = text[3:]
+        if text.endswith("```"): text = text[:-3]
+        return json.loads(text.strip())
+    except Exception as e:
+        print(f"Error generating single page content: {e}")
+        return {
+            "page_number": page_number,
+            "title": f"Subtopic {page_number}",
+            "content": f"Content for page {page_number} about {concept}."
+        }
+
+def generate_page_quiz(concept: str, page_content: str):
+    prompt = f"""
+    You are an AI tutor. Generate a 2-question multiple choice quiz based strictly on the following content about '{concept}':
+    
+    {page_content}
+    
+    Return the response as a valid JSON array of objects, with each object having this structure:
+    {{
+        "question": "The question text?",
+        "options": {{
+            "a": "Option A text",
+            "b": "Option B text",
+            "c": "Option C text"
+        }},
+        "correctOption": "a" // must be one of "a", "b", or "c"
+    }}
+    Provide exactly 2 questions. Do not include markdown formatting or anything else outside the JSON.
+    """
+    try:
+        response = client.models.generate_content(
+            model='gemini-3.6-flash',
+            contents=prompt,
+        )
+        text = response.text.strip()
+        if text.startswith("```json"): text = text[7:]
+        if text.startswith("```"): text = text[3:]
+        if text.endswith("```"): text = text[:-3]
+        return json.loads(text.strip())
+    except Exception as e:
+        print(f"Error generating page quiz: {e}")
+        return [
+            {
+                "question": f"Question about {concept}?",
+                "options": {"a": "Option A", "b": "Option B", "c": "Option C"},
+                "correctOption": "a"
+            }
+        ] * 2

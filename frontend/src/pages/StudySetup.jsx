@@ -77,14 +77,24 @@ export const StudySetup = () => {
             <h3 style={{ color: "var(--accent-cyan)", marginTop: 0 }}>You have an incomplete session!</h3>
             <p style={{ color: "var(--text-secondary)" }}>Concept: <strong>{incompleteSession.config?.concept}</strong></p>
             <p style={{ color: "var(--text-secondary)", marginBottom: "1.5rem" }}>Time remaining: {Math.floor(incompleteSession.timeLeft / 60)} minutes</p>
-            <button 
-              className="btn btn-primary" 
-              style={{ width: "100%", padding: "1rem", fontSize: "1.1rem", background: "var(--accent-purple)" }}
-              onClick={handleResumeSession}
-            >
-              <Target size={20} style={{ marginRight: "8px" }} />
-              Resume Incomplete Session
-            </button>
+            <div style={{ display: "flex", gap: "10px" }}>
+              <button 
+                className="btn btn-primary" 
+                style={{ flex: 1, padding: "1rem", fontSize: "1.1rem", background: "var(--accent-purple)" }}
+                onClick={handleResumeSession}
+              >
+                <Target size={20} style={{ marginRight: "8px" }} />
+                Resume {incompleteSession.config?.concept}
+              </button>
+              <button 
+                className="btn btn-secondary" 
+                style={{ flex: 1, padding: "1rem", fontSize: "1.1rem" }}
+                onClick={() => setIncompleteSession(null)}
+              >
+                <Zap size={20} style={{ marginRight: "8px" }} />
+                Create New Session
+              </button>
+            </div>
           </div>
         )}
 

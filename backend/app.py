@@ -11,7 +11,7 @@ from ai.session_analyzer import analyze_session
 import requests
 from ai.session_analyzer import analyze_session
 from ai.emotion_detector import detect_emotion
-from ai.gemini_service import generate_study_plan, clear_doubt, generate_quiz, generate_study_content
+from ai.gemini_service import generate_study_plan, clear_doubt, generate_quiz, generate_study_content, generate_single_page_content, generate_page_quiz
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -738,7 +738,25 @@ def api_generate_study_content():
     content = generate_study_content(concept)
     return jsonify({"content": content})
 
+@app.route("/api/ai/generate-single-page", methods=["POST"])
+def api_generate_single_page():
+    data = request.json
+    concept = data.get("concept", "")
+    page_number = data.get("page_number", 1)
+    if not concept:
+        return jsonify({"error": "Concept is required"}), 400
+    content = generate_single_page_content(concept, page_number)
+    return jsonify({"content": content})
 
+@app.route("/api/ai/generate-page-quiz", methods=["POST"])
+def api_generate_page_quiz():
+    data = request.json
+    concept = data.get("concept", "")
+    page_content = data.get("page_content", "")
+    if not concept or not page_content:
+        return jsonify({"error": "Concept and page_content are required"}), 400
+    quiz = generate_page_quiz(concept, page_content)
+    return jsonify({"quiz": quiz})
 
 @app.route("/api/tasks", methods=["GET", "POST"])
 @login_required
