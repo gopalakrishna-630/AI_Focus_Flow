@@ -9,6 +9,19 @@ load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 client = genai.Client(api_key=GEMINI_API_KEY)
 
+import time
+def generate_content_with_retry(model, contents, max_retries=5):
+    for attempt in range(max_retries):
+        try:
+            return generate_content_with_retry(model=model, contents=contents)
+        except Exception as e:
+            if '429' in str(e) and attempt < max_retries - 1:
+                print(f"Rate limit hit (429), retrying in 6 seconds... (Attempt {attempt+1})")
+                time.sleep(6)
+            else:
+                raise e
+
+
 def generate_study_plan(concept: str):
     prompt = f"""
     You are an AI study planner. Create a study plan for the concept: '{concept}'.
@@ -26,8 +39,8 @@ def generate_study_plan(concept: str):
     Provide exactly 3 to 4 module names. Do not include markdown formatting or anything else outside the JSON.
     """
     try:
-        response = client.models.generate_content(
-            model='gemini-1.5-flash',
+        response = generate_content_with_retry(
+            model='gemini-3.6-flash',
             contents=prompt,
         )
         # Parse JSON
@@ -56,8 +69,8 @@ def clear_doubt(concept: str, doubt: str):
     Remind them to stay focused at the end!
     """
     try:
-        response = client.models.generate_content(
-            model='gemini-1.5-flash',
+        response = generate_content_with_retry(
+            model='gemini-3.6-flash',
             contents=prompt,
         )
         return response.text.strip()
@@ -82,8 +95,8 @@ def generate_study_content(concept: str):
     Do not include markdown formatting or anything else outside the JSON.
     """
     try:
-        response = client.models.generate_content(
-            model='gemini-1.5-flash',
+        response = generate_content_with_retry(
+            model='gemini-3.6-flash',
             contents=prompt,
         )
         text = response.text.strip()
@@ -116,8 +129,8 @@ def generate_quiz(concept: str):
     Provide exactly 5 questions. Do not include markdown formatting or anything else outside the JSON.
     """
     try:
-        response = client.models.generate_content(
-            model='gemini-1.5-flash',
+        response = generate_content_with_retry(
+            model='gemini-3.6-flash',
             contents=prompt,
         )
         # Parse JSON
@@ -155,8 +168,8 @@ def generate_single_page_content(concept: str, page_number: int):
     Do not include markdown formatting or anything else outside the JSON.
     """
     try:
-        response = client.models.generate_content(
-            model='gemini-1.5-flash',
+        response = generate_content_with_retry(
+            model='gemini-3.6-flash',
             contents=prompt,
         )
         text = response.text.strip()
@@ -191,8 +204,8 @@ def generate_page_quiz(concept: str, page_content: str):
     Provide exactly 2 questions. Do not include markdown formatting or anything else outside the JSON.
     """
     try:
-        response = client.models.generate_content(
-            model='gemini-1.5-flash',
+        response = generate_content_with_retry(
+            model='gemini-3.6-flash',
             contents=prompt,
         )
         text = response.text.strip()
