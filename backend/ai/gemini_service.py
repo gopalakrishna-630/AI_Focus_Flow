@@ -13,7 +13,7 @@ import time
 def generate_content_with_retry(model, contents, max_retries=5):
     for attempt in range(max_retries):
         try:
-            return generate_content_with_retry(model=model, contents=contents)
+            return client.models.generate_content(model=model, contents=contents)
         except Exception as e:
             if '429' in str(e) and attempt < max_retries - 1:
                 print(f"Rate limit hit (429), retrying in 6 seconds... (Attempt {attempt+1})")
