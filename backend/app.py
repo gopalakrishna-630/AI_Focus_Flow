@@ -957,3 +957,81 @@ def api_evaluate_answer():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
+import PyPDF2
+from database import Material
+from ai.gemini_service import answer_from_materials
+import io
+
+@app.route('/api/materials/upload', methods=['POST'])
+@login_required
+def upload_material():
+    user_id = session.get('student_id')
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file provided'}), 400
+    
+    files = request.files.getlist('file')
+    if not files:
+        return jsonify({'error': 'No file selected'}), 400
+    
+    uploaded_materials = []
+    
+    for file in files:
+        filename = file.filename
+        if filename == '': continue
+        content = ''
+        try:
+            if filename.endswith('.pdf'):
+                pdf_reader = PyPDF2.PdfReader(io.BytesIO(file.read()))
+                for page in pdf_reader.pages:
+                    text = page.extract_text()
+                    if text:
+                        content += text + '
+'
+            elif filename.endswith('.txt'):
+                content = file.read().decode('utf-8')
+            else:
+                continue # Skip non text/pdf
+                
+            if not content.strip(): continue
+                
+            new_material = Material(user_id=user_id, filename=filename, content=content)
+            db.session.add(new_material)
+            uploaded_materials.append(new_material)
+        except Exception as e:
+            print('Error on file', filename, e)
+            
+    db.session.commit()
+    return jsonify({'message': 'Files uploaded successfully', 'materials': [m.to_dict() for m in uploaded_materials]}), 201
+
+@app.route('/api/materials', methods=['GET'])
+@login_required
+def get_materials():
+    user_id = session.get('student_id')
+    materials = Material.query.filter_by(user_id=user_id).all()
+    return jsonify({'materials': [m.to_dict() for m in materials]})
+
+@app.route('/api/materials/ask', methods=['POST'])
+@login_required
+def ask_materials():
+    user_id = session.get('student_id')
+    data = request.json
+    question = data.get('question', '')
+    material_ids = data.get('material_ids', [])
+    
+    if not question or not material_ids:
+        return jsonify({'error': 'Question and selected materials are required.'}), 400
+        
+    materials = Material.query.filter(Material.id.in_(material_ids), Material.user_id == user_id).all()
+    if not materials:
+        return jsonify({'error': 'No valid materials found.'}), 404
+        
+    combined_content = ''
+    for m in materials:
+        combined_content += f'--- Source: {m.filename} ---
+{m.content}
+
+'
+        
+    answer = answer_from_materials(question, combined_content)
+    return jsonify({'answer': answer})

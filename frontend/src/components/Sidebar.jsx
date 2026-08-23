@@ -10,7 +10,8 @@ import {
   Settings, 
   LogOut, 
   X, 
-  Activity 
+  Activity,
+  FileText
 } from "lucide-react";
 
 export const Sidebar = ({ isOpen, toggleSidebar }) => {
@@ -28,6 +29,7 @@ export const Sidebar = ({ isOpen, toggleSidebar }) => {
     { name: "Dashboard", path: "/dashboard", icon: <LayoutDashboard size={20} /> },
     { name: "Analytics", path: "/analytics", icon: <BarChart3 size={20} /> },
     { name: "Session History", path: "/history", icon: <History size={20} /> },
+    { name: "Materials", path: "/materials", icon: <FileText size={20} /> },
     { name: "Profile", path: "/profile", icon: <User size={20} /> },
     { name: "Settings", path: "/settings", icon: <Settings size={20} /> }
   ];
